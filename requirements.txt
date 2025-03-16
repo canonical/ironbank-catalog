@@ -1,0 +1,2 @@
+python-dxf @ git+https://github.com/clay-lake/dxf.git@42d0407
+PyYAML==6.0.2

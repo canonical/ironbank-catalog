@@ -1,0 +1,70 @@
+name: Rebuild site
+
+on:
+  push:
+    branches:
+      - main
+  schedule:
+    - cron: '0 0,6,12,18 * * *'
+  workflow_dispatch:
+
+env:
+  IMAGE_TAR_NAME: "dev-image.tar"
+    
+jobs:
+  rebuild_index:
+    name: Rebuild site
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Checkout Dashboard Repository
+        uses: actions/checkout@v4
+
+      # prepare development image
+      - name: Get the SHA of the last commit
+        id: cache_key
+        run: |
+          echo "key=$(md5sum ./Dockerfile |cut -f1 -d' ')" >> $GITHUB_OUTPUT
+      
+      - name: Restore The Dev Image
+        id: cache
+        uses: actions/cache/restore@v4
+        with:
+          key: ${{ steps.cache_key.outputs.key }}
+          path: ${{ env.IMAGE_TAR_NAME }}
+
+      - name: Load The Dev Image
+        if: steps.cache.outputs.cache-hit == 'true'
+        run: |
+          ./run.sh load_image "$IMAGE_TAR_NAME"
+
+      - name: Build The Dev Image
+        if: steps.cache.outputs.cache-hit != 'true'
+        run: |
+          ./run.sh save_image "$IMAGE_TAR_NAME"
+          ls -l "$IMAGE_TAR_NAME"
+
+      - name: Cache The Dev Image
+        if: steps.cache.outputs.cache-hit != 'true'
+        uses: actions/cache@v4
+        with:
+          key: ${{ steps.cache_key.outputs.key }}
+          path: ${{ env.IMAGE_TAR_NAME }}
+
+      # Setup the repository
+      - name: Setup the repository
+        run: |
+          ./run.sh setup
+
+      # fetch data and build index
+      - name: Fetch Data
+        env:
+          AZURE_CANONICAL_PASSWORD: ${{ secrets.AZURE_CANONICAL_PASSWORD }}
+          AZURE_CANONICAL_USER: ${{ secrets.AZURE_CANONICAL_USER }}
+          ROCKS_BOT_TOKEN: ${{ secrets.ROCKS_BOT_TOKEN }}
+          # GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          ./run.sh build_site
+
+      - name: Push Site
+        run: |
+          ./run.sh push_site
