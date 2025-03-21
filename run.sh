@@ -9,8 +9,8 @@ IMAGE_TAG=latest
 
 COMMON_DOCKER_ARGS="--rm -v $ROOT_DIR/:/repo -u $(id -u):$(id -g)"
 
-function rebuild_site(){
-    echo "Rebuilding site..."
+function build_site(){
+    echo "Building site..."
     docker run $COMMON_DOCKER_ARGS -i -w /repo \
         -e AZURE_CANONICAL_PASSWORD="$AZURE_CANONICAL_PASSWORD" \
         -e AZURE_CANONICAL_USER="$AZURE_CANONICAL_USER" \
@@ -107,8 +107,8 @@ shift # capture remaining arguments
 args="$@" 
 case "$action" in
 
-    rebuild_site)
-        rebuild_site $args
+    build_site)
+        build_site $args
         ;;
 
     # development image management
