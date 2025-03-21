@@ -67,4 +67,4 @@ jobs:
 
       - name: Push Site
         run: |
-          ./run.sh push_site
+          ./run.sh push_site "automatic site update"
