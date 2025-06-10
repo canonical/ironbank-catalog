@@ -3,7 +3,6 @@ canonical:
   os_type: ubuntu2204-container
   platforms:
   - linux/amd64
-  - linux/arm64
   tags:
   - '22.04'
   - 22.04_beta
