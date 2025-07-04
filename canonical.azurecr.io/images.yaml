@@ -10,6 +10,19 @@ canonical:
   - 22.04_edge
   - 22.04_stable
   - jammy
+- name: canonical.azurecr.io/ubuntu-pro/ubuntu-stig
+  os_type: ubuntu2404-container
+  platforms:
+  - linux/amd64
+  tags:
+  - 24.04_edge
+- name: canonical.azurecr.io/ubuntu-pro/ubuntu-fips-stig
+  os_type: ubuntu2404-container
+  platforms:
+  - linux/amd64
+  - linux/arm64
+  tags:
+  - 24.04_edge
 - name: canonical.azurecr.io/ubuntu-pro/ubuntu-fips
   os_type: ubuntu2004-container
   platforms:
@@ -33,6 +46,13 @@ canonical:
   - 22.04_edge
   - 22.04_stable
   - jammy
+- name: canonical.azurecr.io/ubuntu-pro/ubuntu-fips
+  os_type: ubuntu2404-container
+  platforms:
+  - linux/amd64
+  - linux/arm64
+  tags:
+  - 24.04_edge
 - name: canonical.azurecr.io/ubuntu-pro/ubuntu-cis-stig
   os_type: ubuntu2004-container
   platforms:
