@@ -119,6 +119,12 @@ canonical:
   - linux/amd64
   tags:
   - 3.8-20.04_edge
+- name: canonical.azurecr.io/ubuntu-pro/python
+  os_type: ubuntu2004-container
+  platforms:
+  - linux/amd64
+  tags:
+  - 3.9-20.04_edge
 - name: canonical.azurecr.io/ubuntu-pro/node
   os_type: ubuntu2404-container
   platforms:
