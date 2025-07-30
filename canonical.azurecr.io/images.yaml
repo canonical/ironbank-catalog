@@ -149,3 +149,15 @@ canonical:
   - linux/amd64
   tags:
   - 6.0-22.04_edge
+- name: canonical.azurecr.io/ironbank/arm64/ubuntu-cis-stig
+  os_type: ubuntu2204-container
+  platforms:
+  - linux/arm64
+  tags:
+  - 22.04_edge
+- name: canonical.azurecr.io/ironbank/amd64/ubuntu-cis-stig
+  os_type: ubuntu2204-container
+  platforms:
+  - linux/amd64
+  tags:
+  - 22.04_edge
