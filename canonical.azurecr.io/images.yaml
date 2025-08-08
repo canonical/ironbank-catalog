@@ -15,6 +15,7 @@ canonical:
   os_type: ubuntu2404-container
   platforms:
   - linux/amd64
+  - linux/arm64
   tags:
   - 24.04_edge
 - name: canonical.azurecr.io/ubuntu-pro/ubuntu-fips-stig
