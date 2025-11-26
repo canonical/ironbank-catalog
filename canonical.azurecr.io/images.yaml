@@ -137,6 +137,12 @@ canonical:
   - linux/amd64
   tags:
   - 18-24.04_edge
+- name: canonical.azurecr.io/ubuntu-pro/jre
+  os_type: ubuntu2404-container
+  platforms:
+  - linux/amd64
+  tags:
+  - 11-24.04_edge
 - name: canonical.azurecr.io/ubuntu-pro/dotnet-runtime-cis-stig
   os_type: ubuntu2204-container
   platforms:

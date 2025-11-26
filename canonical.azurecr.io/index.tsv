@@ -120,6 +120,7 @@ canonical.azurecr.io	ubuntu-pro/python	3.11-22.04_edge	linux/amd64	sha256:35beb5
 canonical.azurecr.io	ubuntu-pro/python	3.8-20.04_edge	linux/amd64	sha256:2c4a66cc3a1a1475637958302b2866005c71b4f898f750a410419312615cdce2	None
 canonical.azurecr.io	ubuntu-pro/python	3.9-20.04_edge	linux/amd64	sha256:f2a96d12dcc570dbeb377c57553a7978cccbb55fcb281df9019a09a662bc63fe	None
 canonical.azurecr.io	ubuntu-pro/node	18-24.04_edge	linux/amd64	sha256:e84b296b9e682f07101f2202889601250ed6fc9782530075e217f7214b70793b	None
+canonical.azurecr.io	ubuntu-pro/jre	11-24.04_edge	linux/amd64	sha256:ab21fefa090f03284ce4905d324f202371a35de4c9bdb21f95a86cb6cb8cfb51	None
 canonical.azurecr.io	ubuntu-pro/dotnet-runtime-cis-stig	6.0-22.04_edge	linux/amd64	sha256:892843db9f18f707ac63460ef9f734384abcdc92f75be9c2ecf7775e3c6b070b	None
 canonical.azurecr.io	ubuntu-pro/dotnet-deps-cis-stig	6.0-22.04_edge	linux/amd64	sha256:027a084364e9942f8fe4c3a2be3ac7447d7a28a2b68c7370cdb9f06d0235efff	None
 canonical.azurecr.io	ubuntu-pro/dotnet-aspnet-cis-stig	6.0-22.04_edge	linux/amd64	sha256:3ead3ba08641e680da12a38dcd276d74bf8311f6dc09b56792bc86c0666e3e3d	None
