@@ -113,6 +113,12 @@ canonical:
   - 22.04_edge
   - 22.04_stable
   - jammy
+- name: canonical.azurecr.io/ubuntu-pro/tomcat
+  os_type: ubuntu2404-container
+  platforms:
+  - linux/amd64
+  tags:
+  - 9-jre17-24.04_edge
 - name: canonical.azurecr.io/ubuntu-pro/python
   os_type: ubuntu2204-container
   platforms:
